@@ -214,7 +214,7 @@ export interface GiftedChatState<TMessage extends IMessage = IMessage> {
 class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   GiftedChatProps<TMessage>,
   GiftedChatState
-> {
+  > {
   static childContextTypes = {
     actionSheet: PropTypes.func,
     getLocale: PropTypes.func,
@@ -228,12 +228,12 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
     disableComposer: false,
     messageIdGenerator: () => uuid.v4(),
     user: {},
-    onSend: () => {},
+    onSend: () => { },
     locale: null,
     timeFormat: TIME_FORMAT,
     dateFormat: DATE_FORMAT,
     loadEarlier: false,
-    onLoadEarlier: () => {},
+    onLoadEarlier: () => { },
     isLoadingEarlier: false,
     renderLoading: null,
     renderLoadEarlier: null,
@@ -670,8 +670,8 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
     return this.props.isKeyboardInternallyHandled ? (
       <KeyboardAvoidingView enabled>{fragment}</KeyboardAvoidingView>
     ) : (
-      fragment
-    )
+        fragment
+      )
   }
 
   onSend = (messages: TMessage[] = [], shouldResetInputToolbar = false) => {
@@ -845,8 +845,8 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
           >
             <View style={styles.container} onLayout={this.onMainViewLayout}>
               <View style={{ flex: 1 }} >
-                            {this.renderMessages()}
-                        </View>
+                {this.renderMessages()}
+              </View>
               {this.renderInputToolbar()}
             </View>
           </ActionSheetProvider>
