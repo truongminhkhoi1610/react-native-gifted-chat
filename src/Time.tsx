@@ -77,8 +77,8 @@ export default class Time<
     position: PropTypes.oneOf(['left', 'right']),
     currentMessage: PropTypes.object,
     containerStyle: PropTypes.shape({
-      left: {},
-      right: {},
+      // left: {},
+      // right: {},
     }),
     timeFormat: PropTypes.string,
     timeTextStyle: PropTypes.shape({

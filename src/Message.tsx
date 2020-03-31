@@ -83,8 +83,8 @@ export default class Message<
     user: PropTypes.object,
     inverted: PropTypes.bool,
     containerStyle: PropTypes.shape({
-      left: {},
-      right: {},
+      // left: {},
+      // right: {},
     }),
     shouldUpdateMessage: PropTypes.func,
   }

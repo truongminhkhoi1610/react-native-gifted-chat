@@ -85,12 +85,10 @@ export default class Avatar<
     onLongPressAvatar: PropTypes.func,
     renderAvatar: PropTypes.func,
     containerStyle: PropTypes.shape({
-      left: {},
-      right: {},
+      
     }),
     imageStyle: PropTypes.shape({
-      left: {},
-      right: {},
+     
     }),
   }
 
