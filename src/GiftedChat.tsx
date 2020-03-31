@@ -844,7 +844,9 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
             ref={(component: any) => (this._actionSheetRef = component)}
           >
             <View style={styles.container} onLayout={this.onMainViewLayout}>
-              {this.renderMessages()}
+              <View style={{ flex: 1 }} >
+                            {this.renderMessages()}
+                        </View>
               {this.renderInputToolbar()}
             </View>
           </ActionSheetProvider>
