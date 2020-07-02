@@ -400,13 +400,23 @@ export default class Bubble<
   }
 
   renderTime() {
-    if (this.props.currentMessage && this.props.currentMessage.createdAt) {
+     if (this.props.currentMessage && this.props.currentMessage.createdAt) {
       const {
         containerStyle,
         wrapperStyle,
         textStyle,
+        nextMessage,
         ...timeProps
       } = this.props
+
+      if (
+        nextMessage &&
+        isSameUser(this.props.currentMessage, nextMessage) &&
+        isSameDay(this.props.currentMessage, nextMessage)
+      ) {
+        return null
+      }
+      
       if (this.props.renderTime) {
         return this.props.renderTime(timeProps)
       }
