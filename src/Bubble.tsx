@@ -426,7 +426,15 @@ export default class Bubble<
   }
 
   renderUsername() {
-    const { currentMessage, user } = this.props
+    const { currentMessage, user, nextMessage } = this.props
+    if (
+      nextMessage &&
+      isSameUser(currentMessage, nextMessage) &&
+      isSameDay(currentMessage, nextMessage)
+    ) {
+      return null
+    }
+    
     if (this.props.renderUsernameOnMessage && currentMessage) {
       if (user && currentMessage.user._id === user._id) {
         return null
